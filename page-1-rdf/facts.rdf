@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:ex="http://example.org/"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:gn="http://www.geonames.org/ontology#">
+
+    <!-- Латунь – це сплав міді та цинку. --> 
+    <rdf:Description rdf:about="http://example.org/Brass">
+        <foaf:name>Латунь</foaf:name>
+        <ex:isAlloyOf rdf:resource="http://example.org/Copper"/>
+        <ex:isAlloyOf rdf:resource="http://example.org/Zinc"/>
+    </rdf:Description>
+
+    <!-- SPIEGEL — німецький інформаційний журнал зі штаб-квартирою в Гамбурзі. --> 
+    <rdf:Description rdf:about="http://example.org/SPIEGEL">
+        <foaf:name>SPIEGEL</foaf:name>
+        <foaf:Organization>SPIEGEL</foaf:Organization>
+        <foaf:based_near rdf:resource="http://example.org/Hamburg"/>
+    </rdf:Description>
+
+    <!-- Есе складається зі вступу, основної частини та висновку. --> 
+    <rdf:Description rdf:about="http://example.org/Essay">
+        <foaf:name>Есе</foaf:name>
+        <ex:hasPart rdf:resource="http://example.org/Introduction"/>
+        <ex:hasPart rdf:resource="http://example.org/Body"/>
+        <ex:hasPart rdf:resource="http://example.org/Conclusion"/>
+    </rdf:Description>
+
+    <!-- Павло знає, що Олена живе в Полтаві. --> 
+        <rdf:Description rdf:about="http://example.org/Pavlo">
+            <foaf:name>Павло</foaf:name>
+            <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+            <ex:knowsThat>
+                <rdf:Description> 
+                    <ex:subject rdf:resource="http://example.org/Olena"/>
+                    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+                    <gn:locatedIn rdf:resource="http://example.org/Poltava"/>
+                </rdf:Description>
+            </ex:knowsThat>
+        </rdf:Description>
+
+    <!-- Олена каже, що її друг живе в Києві. --> 
+    <rdf:Description rdf:about="http://example.org/Olena">
+        <foaf:name>Олена</foaf:name>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <ex:says>
+          <rdf:Description>
+            <ex:subject rdf:resource="http://example.org/Friend"/>
+            <ex:predicate rdf:resource="http://example.org/livesIn"/>
+            <ex:object rdf:resource="http://example.org/Kyiv"/>
+          </rdf:Description>
+        </ex:says>
+    </rdf:Description>
+
+    <!-- Стефан думає, що Анна знає, що він знає її батька. -->
+    <rdf:Description rdf:about="http://example.org/Stefan">
+        <foaf:name>Стефан</foaf:name>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <ex:thinks>
+          <rdf:Description>
+            <ex:subject rdf:resource="http://example.org/Anna"/>
+            <ex:predicate rdf:resource="http://example.org/knows"/>
+            <ex:object>
+              <rdf:Description>
+                <ex:subject rdf:resource="http://example.org/Stefan"/>
+                <ex:predicate rdf:resource="http://example.org/knows"/>
+                <ex:object rdf:resource="http://example.org/AnnaFather"/>
+              </rdf:Description>
+            </ex:object>
+          </rdf:Description>
+        </ex:thinks>
+    </rdf:Description>
+
+    <!-- Іван знає, що Рим є столицею Італії. --> 
+    <rdf:Description rdf:about="http://example.org/Ivan">
+        <foaf:name>Іван</foaf:name>
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <ex:knows>
+        <rdf:Description>
+            <ex:subject rdf:resource="http://example.org/Rome"/>
+            <ex:isCapitalOf rdf:resource="http://example.org/Italy"/>
+        </rdf:Description>
+        </ex:knows>
+    </rdf:Description>
+</rdf:RDF>

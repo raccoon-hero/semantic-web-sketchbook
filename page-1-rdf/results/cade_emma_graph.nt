@@ -1,0 +1,41 @@
+<http://example.org/Emma> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> "http://xmlns.com/foaf/0.1/Person" .
+<http://example.org/CadesBachelorsDegree> <https://schema.org/dateAwarded> "2011"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+<http://example.org/MeetingEmma> <https://schema.org/location> "http://dbpedia.org/resource/Paris"@en .
+<http://example.org/Cade> <http://xmlns.com/foaf/0.1/interest> "Довкілля"@uk .
+<http://example.org/Emma> <http://xmlns.com/foaf/0.1/interest> "Музика"@uk .
+<http://example.org/MeetingEmma> <https://schema.org/attendee> "http://example.org/Cade"@uk .
+<http://example.org/MeetingEmma> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> "https://schema.org/Event" .
+<http://example.org/Cade> <http://xmlns.com/foaf/0.1/interest> "Подорожі"@uk .
+<http://example.org/Cade> <http://xmlns.com/foaf/0.1/interest> "Птахи"@uk .
+<http://example.org/MeetingEmma> <https://schema.org/startDate> "2014-08"^^<http://www.w3.org/2001/XMLSchema#gYearMonth> .
+<http://example.org/Emma> <http://xmlns.com/foaf/0.1/interest> "Їзда на велосипеді"@uk .
+<http://example.org/Emma> <http://xmlns.com/foaf/0.1/interest> "Подорожі"@uk .
+<http://example.org/EmmasMastersDegree> <https://schema.org/credentialCategory> "Магістр"@uk .
+<http://example.org/Emma> <http://example.org/visited> "http://dbpedia.org/resource/Sweden"@en .
+<http://example.org/Emma> <http://xmlns.com/foaf/0.1/firstName> "Емма"@uk .
+<http://example.org/Emma> <http://example.org/visited> "http://dbpedia.org/resource/Germany"@en .
+<http://example.org/Cade> <http://xmlns.com/foaf/0.1/firstName> "Кейд"@uk .
+<http://example.org/Cade> <http://xmlns.com/foaf/0.1/interest> "Фотографія"@uk .
+<http://example.org/Emma> <http://example.org/hasExpertiseIn> "http://dbpedia.org/resource/Air_pollution"@en .
+<http://example.org/CadesBachelorsDegree> <https://schema.org/educationalInstitution> "Каліфорнійський університет"@uk .
+<http://example.org/Cade> <http://example.org/visited> "http://dbpedia.org/resource/France"@en .
+<http://example.org/EmmasMastersDegree> <https://schema.org/awardee> "http://example.org/Emma"@uk .
+<http://example.org/Emma> <http://example.org/visited> "http://dbpedia.org/resource/Portugal"@en .
+<http://example.org/Emma> <http://example.org/visited> "http://dbpedia.org/resource/Denmark"@en .
+<http://example.org/CadesBachelorsDegree> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> "https://schema.org/EducationalOccupationalCredential" .
+<http://example.org/Emma> <http://example.org/hasExpertiseIn> "http://dbpedia.org/resource/Waste_management"@en .
+<http://example.org/Emma> <http://example.org/visited> "http://dbpedia.org/resource/France"@en .
+<http://example.org/Cade> <https://schema.org/address> "1516 Henry Street, Берклі, Каліфорнія 94709, США"@uk .
+<http://example.org/EmmasMastersDegree> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> "https://schema.org/EducationalOccupationalCredential" .
+<http://example.org/EmmasMastersDegree> <https://schema.org/dateAwarded> "2015"^^<http://www.w3.org/2001/XMLSchema#gYear> .
+<http://example.org/Emma> <https://schema.org/address> "Carrer de la Guardia Civil 20, 46020 Valencia, Spain"@en .
+<http://example.org/EmmasMastersDegree> <https://schema.org/educationalInstitution> "Університет Валенсії"@uk .
+<http://example.org/Cade> <http://xmlns.com/foaf/0.1/knows> "http://example.org/Emma"@uk .
+<http://example.org/Cade> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> "http://xmlns.com/foaf/0.1/Person" .
+<http://example.org/CadesBachelorsDegree> <https://schema.org/credentialCategory> "Бакалавр"@uk .
+<http://example.org/MeetingEmma> <https://schema.org/attendee> "http://example.org/Emma"@uk .
+<http://example.org/Cade> <http://xmlns.com/foaf/0.1/interest> "Екологія"@uk .
+<http://example.org/Emma> <http://example.org/hasExpertiseIn> "http://dbpedia.org/resource/Hazardous_waste"@en .
+<http://example.org/Cade> <http://example.org/visited> "http://dbpedia.org/resource/Canada"@en .
+<http://example.org/CadesBachelorsDegree> <https://schema.org/awardee> "http://example.org/Cade"@uk .
+<http://example.org/Emma> <http://example.org/visited> "http://dbpedia.org/resource/Italy"@en .

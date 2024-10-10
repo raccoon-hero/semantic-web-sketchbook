@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ex="http://example.org/"
+   xmlns:foaf="http://xmlns.com/foaf/0.1/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:schema="https://schema.org/"
+>
+  <rdf:Description rdf:about="http://example.org/Emma">
+    <rdf:type>http://xmlns.com/foaf/0.1/Person</rdf:type>
+    <foaf:firstName xml:lang="uk">Емма</foaf:firstName>
+    <schema:address xml:lang="en">Carrer de la Guardia Civil 20, 46020 Valencia, Spain</schema:address>
+    <ex:hasExpertiseIn xml:lang="en">http://dbpedia.org/resource/Waste_management</ex:hasExpertiseIn>
+    <ex:hasExpertiseIn xml:lang="en">http://dbpedia.org/resource/Hazardous_waste</ex:hasExpertiseIn>
+    <ex:hasExpertiseIn xml:lang="en">http://dbpedia.org/resource/Air_pollution</ex:hasExpertiseIn>
+    <foaf:interest xml:lang="uk">Їзда на велосипеді</foaf:interest>
+    <foaf:interest xml:lang="uk">Музика</foaf:interest>
+    <foaf:interest xml:lang="uk">Подорожі</foaf:interest>
+    <ex:visited xml:lang="en">http://dbpedia.org/resource/Portugal</ex:visited>
+    <ex:visited xml:lang="en">http://dbpedia.org/resource/Italy</ex:visited>
+    <ex:visited xml:lang="en">http://dbpedia.org/resource/France</ex:visited>
+    <ex:visited xml:lang="en">http://dbpedia.org/resource/Germany</ex:visited>
+    <ex:visited xml:lang="en">http://dbpedia.org/resource/Denmark</ex:visited>
+    <ex:visited xml:lang="en">http://dbpedia.org/resource/Sweden</ex:visited>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/CadesBachelorsDegree">
+    <rdf:type>https://schema.org/EducationalOccupationalCredential</rdf:type>
+    <schema:credentialCategory xml:lang="uk">Бакалавр</schema:credentialCategory>
+    <schema:dateAwarded rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2011</schema:dateAwarded>
+    <schema:awardee xml:lang="uk">http://example.org/Cade</schema:awardee>
+    <schema:educationalInstitution xml:lang="uk">Каліфорнійський університет</schema:educationalInstitution>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/MeetingEmma">
+    <rdf:type>https://schema.org/Event</rdf:type>
+    <schema:location xml:lang="en">http://dbpedia.org/resource/Paris</schema:location>
+    <schema:startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYearMonth">2014-08</schema:startDate>
+    <schema:attendee xml:lang="uk">http://example.org/Cade</schema:attendee>
+    <schema:attendee xml:lang="uk">http://example.org/Emma</schema:attendee>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/Cade">
+    <rdf:type>http://xmlns.com/foaf/0.1/Person</rdf:type>
+    <foaf:firstName xml:lang="uk">Кейд</foaf:firstName>
+    <schema:address xml:lang="uk">1516 Henry Street, Берклі, Каліфорнія 94709, США</schema:address>
+    <foaf:interest xml:lang="uk">Птахи</foaf:interest>
+    <foaf:interest xml:lang="uk">Екологія</foaf:interest>
+    <foaf:interest xml:lang="uk">Довкілля</foaf:interest>
+    <foaf:interest xml:lang="uk">Фотографія</foaf:interest>
+    <foaf:interest xml:lang="uk">Подорожі</foaf:interest>
+    <ex:visited xml:lang="en">http://dbpedia.org/resource/Canada</ex:visited>
+    <ex:visited xml:lang="en">http://dbpedia.org/resource/France</ex:visited>
+    <foaf:knows xml:lang="uk">http://example.org/Emma</foaf:knows>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/EmmasMastersDegree">
+    <rdf:type>https://schema.org/EducationalOccupationalCredential</rdf:type>
+    <schema:credentialCategory xml:lang="uk">Магістр</schema:credentialCategory>
+    <schema:dateAwarded rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2015</schema:dateAwarded>
+    <schema:awardee xml:lang="uk">http://example.org/Emma</schema:awardee>
+    <schema:educationalInstitution xml:lang="uk">Університет Валенсії</schema:educationalInstitution>
+  </rdf:Description>
+</rdf:RDF>

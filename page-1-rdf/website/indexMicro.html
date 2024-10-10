@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" vocab="https://schema.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Popular Video Games | Microdata Version</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Popular Video Games</h1>
+
+        <div class="game-list">
+            <!-- Fortnite -->
+            <div class="game" itemscope itemtype="https://schema.org/VideoGame">
+                <h2 itemprop="name">Fortnite</h2>
+                <p>Platform: <span itemprop="gamePlatform">PC, PlayStation, Xbox</span></p>
+                <p>Release Date: <span itemprop="datePublished">2017-07-21</span></p>
+                <p>Rating: <span itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                    <span itemprop="ratingValue">4.5</span>/5 from <span itemprop="reviewCount">20000</span> reviews
+                </span></p>
+            </div>
+
+            <!-- Among Us -->
+            <div class="game" itemscope itemtype="https://schema.org/VideoGame">
+                <h2 itemprop="name">Among Us</h2>
+                <p>Platform: <span itemprop="gamePlatform">PC, Mobile, Nintendo Switch</span></p>
+                <p>Release Date: <span itemprop="datePublished">2018-11-16</span></p>
+                <p>Rating: <span itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                    <span itemprop="ratingValue">4.8</span>/5 from <span itemprop="reviewCount">15000</span> reviews
+                </span></p>
+            </div>
+
+            <!-- Genshin Impact -->
+            <div class="game" itemscope itemtype="https://schema.org/VideoGame">
+                <h2 itemprop="name">Genshin Impact</h2>
+                <p>Platform: <span itemprop="gamePlatform">PC, Mobile, PlayStation</span></p>
+                <p>Release Date: <span itemprop="datePublished">2020-09-28</span></p>
+                <p>Rating: <span itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                    <span itemprop="ratingValue">4.7</span>/5 from <span itemprop="reviewCount">25000</span> reviews
+                </span></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

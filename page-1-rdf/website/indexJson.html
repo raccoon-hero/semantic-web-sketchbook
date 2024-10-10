@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Popular Video Games | JSON-LD Version</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Popular Video Games",
+      "itemListElement": [
+        {
+          "@type": "VideoGame",
+          "name": "Fortnite",
+          "url": "https://example.com/fortnite",
+          "gamePlatform": "PC, PlayStation, Xbox",
+          "datePublished": "2017-07-21",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.5",
+            "reviewCount": "20000"
+          }
+        },
+        {
+          "@type": "VideoGame",
+          "name": "Among Us",
+          "url": "https://example.com/among-us",
+          "gamePlatform": "PC, Mobile, Nintendo Switch",
+          "datePublished": "2018-11-16",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "15000"
+          }
+        },
+        {
+          "@type": "VideoGame",
+          "name": "Genshin Impact",
+          "url": "https://example.com/genshin-impact",
+          "gamePlatform": "PC, Mobile, PlayStation",
+          "datePublished": "2020-09-28",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.7",
+            "reviewCount": "25000"
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Popular Video Games</h1>
+
+        <div class="game-list">
+            <div class="game">
+                <h2>Fortnite</h2>
+                <p>Platform: PC, PlayStation, Xbox</p>
+                <p>Release Date: 2017-07-21</p>
+                <p>Rating: 4.5/5 from 20000 reviews</p>
+            </div>
+
+            <div class="game">
+                <h2>Among Us</h2>
+                <p>Platform: PC, Mobile, Nintendo Switch</p>
+                <p>Release Date: 2018-11-16</p>
+                <p>Rating: 4.8/5 from 15000 reviews</p>
+            </div>
+
+            <div class="game">
+                <h2>Genshin Impact</h2>
+                <p>Platform: PC, Mobile, PlayStation</p>
+                <p>Release Date: 2020-09-28</p>
+                <p>Rating: 4.7/5 from 25000 reviews</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

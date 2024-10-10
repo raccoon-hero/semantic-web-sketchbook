@@ -1,0 +1,53 @@
+@prefix ex: <http://example.org/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+_:N8b7cdf5d5c1e46d09a770d1b2e3c906e {
+    ex:Cade a "http://xmlns.com/foaf/0.1/Person" ;
+        ex:visited "http://dbpedia.org/resource/Canada"@en,
+            "http://dbpedia.org/resource/France"@en ;
+        foaf:firstName "Кейд"@uk ;
+        foaf:interest "Довкілля"@uk,
+            "Екологія"@uk,
+            "Подорожі"@uk,
+            "Птахи"@uk,
+            "Фотографія"@uk ;
+        foaf:knows "http://example.org/Emma"@uk ;
+        schema:address "1516 Henry Street, Берклі, Каліфорнія 94709, США"@uk .
+
+    ex:CadesBachelorsDegree a "https://schema.org/EducationalOccupationalCredential" ;
+        schema:awardee "http://example.org/Cade"@uk ;
+        schema:credentialCategory "Бакалавр"@uk ;
+        schema:dateAwarded "2011"^^xsd:gYear ;
+        schema:educationalInstitution "Каліфорнійський університет"@uk .
+
+    ex:Emma a "http://xmlns.com/foaf/0.1/Person" ;
+        ex:hasExpertiseIn "http://dbpedia.org/resource/Air_pollution"@en,
+            "http://dbpedia.org/resource/Hazardous_waste"@en,
+            "http://dbpedia.org/resource/Waste_management"@en ;
+        ex:visited "http://dbpedia.org/resource/Denmark"@en,
+            "http://dbpedia.org/resource/France"@en,
+            "http://dbpedia.org/resource/Germany"@en,
+            "http://dbpedia.org/resource/Italy"@en,
+            "http://dbpedia.org/resource/Portugal"@en,
+            "http://dbpedia.org/resource/Sweden"@en ;
+        foaf:firstName "Емма"@uk ;
+        foaf:interest "Їзда на велосипеді"@uk,
+            "Музика"@uk,
+            "Подорожі"@uk ;
+        schema:address "Carrer de la Guardia Civil 20, 46020 Valencia, Spain"@en .
+
+    ex:EmmasMastersDegree a "https://schema.org/EducationalOccupationalCredential" ;
+        schema:awardee "http://example.org/Emma"@uk ;
+        schema:credentialCategory "Магістр"@uk ;
+        schema:dateAwarded "2015"^^xsd:gYear ;
+        schema:educationalInstitution "Університет Валенсії"@uk .
+
+    ex:MeetingEmma a "https://schema.org/Event" ;
+        schema:attendee "http://example.org/Cade"@uk,
+            "http://example.org/Emma"@uk ;
+        schema:location "http://dbpedia.org/resource/Paris"@en ;
+        schema:startDate "2014-08"^^xsd:gYearMonth .
+}
+

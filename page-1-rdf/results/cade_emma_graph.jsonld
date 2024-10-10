@@ -1,0 +1,228 @@
+[
+  {
+    "@id": "http://example.org/Cade",
+    "@type": [
+      {
+        "@value": "http://xmlns.com/foaf/0.1/Person"
+      }
+    ],
+    "http://example.org/visited": [
+      {
+        "@language": "en",
+        "@value": "http://dbpedia.org/resource/Canada"
+      },
+      {
+        "@language": "en",
+        "@value": "http://dbpedia.org/resource/France"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/firstName": [
+      {
+        "@language": "uk",
+        "@value": "Кейд"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/interest": [
+      {
+        "@language": "uk",
+        "@value": "Птахи"
+      },
+      {
+        "@language": "uk",
+        "@value": "Екологія"
+      },
+      {
+        "@language": "uk",
+        "@value": "Довкілля"
+      },
+      {
+        "@language": "uk",
+        "@value": "Фотографія"
+      },
+      {
+        "@language": "uk",
+        "@value": "Подорожі"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/knows": [
+      {
+        "@language": "uk",
+        "@value": "http://example.org/Emma"
+      }
+    ],
+    "https://schema.org/address": [
+      {
+        "@language": "uk",
+        "@value": "1516 Henry Street, Берклі, Каліфорнія 94709, США"
+      }
+    ]
+  },
+  {
+    "@id": "http://example.org/EmmasMastersDegree",
+    "@type": [
+      {
+        "@value": "https://schema.org/EducationalOccupationalCredential"
+      }
+    ],
+    "https://schema.org/awardee": [
+      {
+        "@language": "uk",
+        "@value": "http://example.org/Emma"
+      }
+    ],
+    "https://schema.org/credentialCategory": [
+      {
+        "@language": "uk",
+        "@value": "Магістр"
+      }
+    ],
+    "https://schema.org/dateAwarded": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#gYear",
+        "@value": "2015"
+      }
+    ],
+    "https://schema.org/educationalInstitution": [
+      {
+        "@language": "uk",
+        "@value": "Університет Валенсії"
+      }
+    ]
+  },
+  {
+    "@id": "http://example.org/Emma",
+    "@type": [
+      {
+        "@value": "http://xmlns.com/foaf/0.1/Person"
+      }
+    ],
+    "http://example.org/hasExpertiseIn": [
+      {
+        "@language": "en",
+        "@value": "http://dbpedia.org/resource/Waste_management"
+      },
+      {
+        "@language": "en",
+        "@value": "http://dbpedia.org/resource/Hazardous_waste"
+      },
+      {
+        "@language": "en",
+        "@value": "http://dbpedia.org/resource/Air_pollution"
+      }
+    ],
+    "http://example.org/visited": [
+      {
+        "@language": "en",
+        "@value": "http://dbpedia.org/resource/Portugal"
+      },
+      {
+        "@language": "en",
+        "@value": "http://dbpedia.org/resource/Italy"
+      },
+      {
+        "@language": "en",
+        "@value": "http://dbpedia.org/resource/France"
+      },
+      {
+        "@language": "en",
+        "@value": "http://dbpedia.org/resource/Germany"
+      },
+      {
+        "@language": "en",
+        "@value": "http://dbpedia.org/resource/Denmark"
+      },
+      {
+        "@language": "en",
+        "@value": "http://dbpedia.org/resource/Sweden"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/firstName": [
+      {
+        "@language": "uk",
+        "@value": "Емма"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/interest": [
+      {
+        "@language": "uk",
+        "@value": "Їзда на велосипеді"
+      },
+      {
+        "@language": "uk",
+        "@value": "Музика"
+      },
+      {
+        "@language": "uk",
+        "@value": "Подорожі"
+      }
+    ],
+    "https://schema.org/address": [
+      {
+        "@language": "en",
+        "@value": "Carrer de la Guardia Civil 20, 46020 Valencia, Spain"
+      }
+    ]
+  },
+  {
+    "@id": "http://example.org/CadesBachelorsDegree",
+    "@type": [
+      {
+        "@value": "https://schema.org/EducationalOccupationalCredential"
+      }
+    ],
+    "https://schema.org/awardee": [
+      {
+        "@language": "uk",
+        "@value": "http://example.org/Cade"
+      }
+    ],
+    "https://schema.org/credentialCategory": [
+      {
+        "@language": "uk",
+        "@value": "Бакалавр"
+      }
+    ],
+    "https://schema.org/dateAwarded": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#gYear",
+        "@value": "2011"
+      }
+    ],
+    "https://schema.org/educationalInstitution": [
+      {
+        "@language": "uk",
+        "@value": "Каліфорнійський університет"
+      }
+    ]
+  },
+  {
+    "@id": "http://example.org/MeetingEmma",
+    "@type": [
+      {
+        "@value": "https://schema.org/Event"
+      }
+    ],
+    "https://schema.org/attendee": [
+      {
+        "@language": "uk",
+        "@value": "http://example.org/Cade"
+      },
+      {
+        "@language": "uk",
+        "@value": "http://example.org/Emma"
+      }
+    ],
+    "https://schema.org/location": [
+      {
+        "@language": "en",
+        "@value": "http://dbpedia.org/resource/Paris"
+      }
+    ],
+    "https://schema.org/startDate": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#gYearMonth",
+        "@value": "2014-08"
+      }
+    ]
+  }
+]
