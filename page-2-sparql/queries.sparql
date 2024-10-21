@@ -1,0 +1,147 @@
+# ЗАПИТ 1
+# ::::::::::::::::
+# чисельність населення кожної з країн Східної Європи.
+#   ∟ впорядкувати за спадінням чисельності
+# ________________
+# знахідки:
+#  • населення Сакартвело не те
+#  • мова Сакартвело не та
+#  • підтягує зокрема невизнані регіони без фільтра
+
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbc: <http://dbpedia.org/resource/Category:>
+PREFIX dct: <http://purl.org/dc/terms/>
+
+SELECT ?country ?population
+WHERE {
+  ?country dct:subject dbc:Eastern_European_countries .
+  ?country a dbo:Country .
+  ?country dbo:populationTotal ?population .
+
+  FILTER NOT EXISTS {
+    ?country dct:subject dbc:States_with_limited_recognition .
+  }
+}
+ORDER BY DESC(?population)
+
+# ЗАПИТ 2
+# ::::::::::::::::
+# назви європейських та північноамериканських країн на «А»
+#   ∟ впорядкувати за алфавітом
+# перелічити усі назви їхніх пов'язаних мов
+#   ∟ верхній регістр, якщо кілька – розділені «|»
+#   ∟ показати країну навіть без пов'язаних мов
+# ________________
+# знахідки:
+# • пов'язані мови на прикладі Ukraine, Andorra, Austria
+# • різниця між language / languages / officialLanguage
+
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbc: <http://dbpedia.org/resource/Category:>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dct: <http://purl.org/dc/terms/>
+
+SELECT ?country_name (GROUP_CONCAT(UCASE(?language_name); separator="|") AS ?languages)
+WHERE {
+  {
+    ?country dct:subject dbc:Countries_in_Europe .
+    ?country a dbo:Country .
+  } UNION {
+    ?country dct:subject dbc:Countries_in_North_America .
+    ?country a dbo:Country .
+  }
+
+  ?country rdfs:label ?country_name .
+  FILTER (LANG(?country_name) = "en" && STRSTARTS(?country_name, "A"))
+
+  OPTIONAL {
+    ?country dbo:language ?language .
+    ?language rdfs:label ?language_name .
+    FILTER (LANG(?language_name) = "en")
+  }
+}
+GROUP BY ?country_name
+ORDER BY ?country_name
+
+# ЗАПИТ 3.1 – Усі лавреати
+# ::::::::::::::::
+# усі лавреати Нобелівської премії з фізики
+#   ∟ впорядкувати від найстаршого
+# ________________
+# знахідки:
+# • відсутній deathDate – живі / померли цьогоріч
+
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?laureate_name ?birthDate ?deathDate 
+       (IF(BOUND(?deathDate), 
+            (YEAR(?deathDate) - YEAR(?birthDate)), 
+            (YEAR(NOW()) - YEAR(?birthDate))) AS ?age)
+WHERE {
+  ?laureate dbo:award dbr:Nobel_Prize_in_Physics ;
+            rdfs:label ?laureate_name ;
+            dbo:birthDate ?birthDate .
+  
+  OPTIONAL { ?laureate dbo:deathDate ?deathDate }
+
+  FILTER (LANG(?laureate_name) = "en")
+}
+ORDER BY DESC(?age)
+
+# ЗАПИТ 3.2 – Найкращі університети
+# ::::::::::::::::
+# 10 найкращих університетів з найбільшою кількість лавреатів
+# Нобелівської премії з фізики
+# ________________
+# знахідки:
+# • як розцінювати «найкращі», через ranking?
+
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?university_name (COUNT(DISTINCT ?laureate) AS ?nobel_laureates) ?ranking
+WHERE {
+  ?laureate dbo:award dbr:Nobel_Prize_in_Physics .
+  ?laureate (dbo:almaMater | dbo:affiliation) ?university .
+
+  ?university a dbo:University .
+  ?university rdfs:label ?university_name .
+
+  OPTIONAL { ?university dbo:ranking ?ranking }
+
+  FILTER (LANG(?university_name) = "en")
+}
+GROUP BY ?university_name ?ranking
+ORDER BY ?ranking DESC(?nobel_laureates)
+LIMIT 10
+
+# ЗАПИТ 3.3 – Імігранти
+# ::::::::::::::::
+# кількість лавреатів Нобелівської премії з фізики, які є
+# імігрантами (країна народження відмінна від університетської)
+# ________________
+# знахідки:
+# • система має лише 163|220|221 лавреатів, має бути 226
+#   ∟ 163: ?laureate dbo:award dbr:Nobel_Prize_in_Physics .
+#   ∟ 221: ?laureate dct:subject dbc:Nobel_laureates_in_Physics .
+#       ∟ 220: + ?laureate a dbo:Person.
+
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT (COUNT(DISTINCT ?laureate) AS ?immigrant_laureates)
+WHERE {
+  ?laureate dbo:award dbr:Nobel_Prize_in_Physics ;
+            dbo:birthPlace ?birthPlace ;
+            (dbo:almaMater | dbo:affiliation) ?university .
+  
+  ?birthPlace dbo:country ?birthCountry .
+
+  ?university dbo:country ?universityCountry .
+
+  FILTER (?birthCountry != ?universityCountry)
+}
