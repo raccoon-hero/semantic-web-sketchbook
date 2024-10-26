@@ -1,0 +1,20 @@
+# ЗАВДАННЯ 1
+# __________________
+# Використовуючи відкритий SPARQL endpoint http://dbpedia.org/sparql, 
+# напишіть SPARQL запит для визначення назви найстарішого університету України.
+
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?university_name ?foundingDate
+WHERE {
+  ?university a dbo:University ;
+              rdfs:label ?university_name ;
+              dbo:country dbr:Ukraine ;
+              dbo:foundingDate ?foundingDate .
+  
+  FILTER (LANG(?university_name) = "uk")
+}
+ORDER BY ?foundingDate
+LIMIT 1
